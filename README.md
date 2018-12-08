@@ -19,4 +19,6 @@ yarn start
 
 `````
 
+## ps 因为对php的东西还不是很熟悉，所以配置比较麻烦，写的比较繁杂，以后会继续努力的(*^▽^*)
+
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

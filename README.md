@@ -6,6 +6,7 @@
 
 ### 首先你要启动phpstudy，并把db_chengji.sql导入到数据库中去
 ### 然后把testphp文件夹放进phpstudy的根目录中去
+### 最后把testphp中的三个PHP文件里面的数据库配置更改成你自己的数据库配置就ok了
 ``` bash
 # install dependencies
 yarn

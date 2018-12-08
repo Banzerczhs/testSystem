@@ -4,8 +4,8 @@
 
 ## Build Setup
 
-###首先你要启动phpstudy，并把db_chengji.sql导入到数据库中去
-###然后把testphp文件夹放进phpstudy的根目录中去
+### 首先你要启动phpstudy，并把db_chengji.sql导入到数据库中去
+### 然后把testphp文件夹放进phpstudy的根目录中去
 ``` bash
 # install dependencies
 yarn

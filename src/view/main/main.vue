@@ -68,7 +68,10 @@ export default {
             this.$router.replace('/login');
         }
 
-        window.addEventListener('beforeunload',this.interrutp);
+        window.addEventListener('beforeunload',this.interrutp);     //绑定浏览器窗口离开事件
+    },
+    beforeDestroy(){
+        window.removeEventListener('beforeunload',this.interrutp);      //在组件注销时解绑浏览器窗口事件
     },
     methods : {
         renderQuestion(){       //处理题目数据

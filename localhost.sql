@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2018 年 11 月 28 日 08:15
--- 服务器版本: 5.00.15
--- PHP 版本: 5.3.29
+-- 生成日期: 2018 年 12 月 09 日 09:53
+-- 服务器版本: 5.5.53
+-- PHP 版本: 5.4.45
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- 数据库: `db_chengji`
 --
+CREATE DATABASE `db_chengji` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `db_chengji`;
 
 -- --------------------------------------------------------
 
@@ -27,18 +29,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `tb_info` (
-  `id` int(4) NOT NULL auto_increment,
+  `id` int(4) NOT NULL AUTO_INCREMENT,
   `xingming` varchar(10) NOT NULL,
   `xingbie` varchar(1) NOT NULL,
   `banji` varchar(20) NOT NULL,
-  `aihao` varchar(30) NOT NULL default ' ',
-  `yuwen` int(3) NOT NULL default '0',
-  `shuxue` int(3) NOT NULL default '0',
-  `zongfen` int(3) NOT NULL default '0',
-  `mingci` int(3) NOT NULL default '0',
-  `zhaopian` varchar(35) NOT NULL default 'none.JPG',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=62 ;
+  `aihao` varchar(30) NOT NULL DEFAULT ' ',
+  `yuwen` int(3) NOT NULL DEFAULT '0',
+  `shuxue` int(3) NOT NULL DEFAULT '0',
+  `zongfen` int(3) NOT NULL DEFAULT '0',
+  `mingci` int(3) NOT NULL DEFAULT '0',
+  `zhaopian` varchar(35) NOT NULL DEFAULT 'none.JPG',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=62 ;
 
 --
 -- 转存表中的数据 `tb_info`
@@ -80,51 +82,51 @@ INSERT INTO `tb_info` (`id`, `xingming`, `xingbie`, `banji`, `aihao`, `yuwen`, `
 --
 
 CREATE TABLE IF NOT EXISTS `tb_kaosheng` (
-  `id` bigint(4) NOT NULL auto_increment,
-  `考号` varchar(10) NOT NULL,
-  `姓名` varchar(12) NOT NULL,
-  `题目` varchar(1000) NOT NULL,
-  `答案` varchar(1000) NOT NULL,
-  `交卷时间` datetime NOT NULL,
-  `密码` varchar(10) NOT NULL,
-  `总分` float NOT NULL,
-  `百科` float NOT NULL default '0',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
+  `id` bigint(4) NOT NULL AUTO_INCREMENT,
+  `kaohao` varchar(10) NOT NULL,
+  `xingming` varchar(12) NOT NULL,
+  `info` varchar(1000) NOT NULL,
+  `jiaojuanshijian` datetime NOT NULL,
+  `mima` varchar(10) NOT NULL,
+  `zongfen` float NOT NULL,
+  `百科` float NOT NULL DEFAULT '0',
+  `photos` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
 
 --
 -- 转存表中的数据 `tb_kaosheng`
 --
 
-INSERT INTO `tb_kaosheng` (`id`, `考号`, `姓名`, `题目`, `答案`, `交卷时间`, `密码`, `总分`, `百科`) VALUES
-(1, '001', '刘备', '', '', '0000-00-00 00:00:00', 'bedn6863', 6, 6),
-(2, '002', '关羽', '', '', '0000-00-00 00:00:00', 'ycpn7611', 0, 0),
-(3, '003', '张飞', '', '', '0000-00-00 00:00:00', 'cncr4261', 0, 0),
-(4, '004', '赵云', '', '', '0000-00-00 00:00:00', 'fiip9757', 0, 0),
-(5, '005', '马超', '', '', '0000-00-00 00:00:00', 'tubr3553', 0, 0),
-(6, '006', '黄忠', '', '', '0000-00-00 00:00:00', 'rkqk1440', 0, 0),
-(7, '007', '魏延', '', '', '0000-00-00 00:00:00', 'yscn3579', 0, 0),
-(8, '008', '姜维', '', '', '0000-00-00 00:00:00', 'gvfs1889', 0, 0),
-(9, '009', '关兴', '', '', '0000-00-00 00:00:00', 'nryp7397', 0, 0),
-(10, '010', '张苞', '', '', '0000-00-00 00:00:00', 'afoi8681', 0, 0),
-(11, '011', '吕布', '', '', '0000-00-00 00:00:00', 'ejwg2035', 0, 0),
-(12, '012', '典韦', '', '', '0000-00-00 00:00:00', 'wgus4481', 0, 0),
-(13, '013', '许褚', '', '', '0000-00-00 00:00:00', 'zpft1239', 0, 0),
-(14, '014', '徐晃', '', '', '0000-00-00 00:00:00', 'ghjw8803', 0, 0),
-(15, '015', '张辽', '', '', '0000-00-00 00:00:00', 'fzla7224', 0, 0),
-(16, '016', '廖化', '', '', '0000-00-00 00:00:00', 'afux3750', 0, 0),
-(17, '017', '马岱', '', '', '0000-00-00 00:00:00', 'fuqe8423', 0, 0),
-(18, '018', '诸葛亮', '', '', '0000-00-00 00:00:00', 'cblc3774', 0, 0),
-(19, '019', '庞统', '', '', '0000-00-00 00:00:00', 'xnlo4239', 0, 0),
-(20, '020', '公孙瓒', '', '', '0000-00-00 00:00:00', 'evje8416', 0, 0),
-(21, '021', '孙坚', '', '', '0000-00-00 00:00:00', 'txpg2793', 0, 0),
-(22, '022', '孙策', '', '', '0000-00-00 00:00:00', 'shvp9064', 0, 0),
-(23, '023', '孙权', '', '', '0000-00-00 00:00:00', 'nkyb9674', 0, 0),
-(24, '024', '夏侯渊', '', '', '0000-00-00 00:00:00', 'irhw4697', 0, 0),
-(25, '025', '夏侯惇', '', '', '0000-00-00 00:00:00', 'ufya7692', 0, 0),
-(26, '026', '夏侯霸', '', '', '0000-00-00 00:00:00', 'wkzn8641', 0, 0),
-(27, '027', '曹嵩', '', '', '0000-00-00 00:00:00', 'yroh8623', 0, 0),
-(28, '028', '曹丕', '', '', '0000-00-00 00:00:00', 'xwuu1313', 0, 0);
+INSERT INTO `tb_kaosheng` (`id`, `kaohao`, `xingming`, `info`, `jiaojuanshijian`, `mima`, `zongfen`, `百科`, `photos`) VALUES
+(1, '001', '刘备', '[{"id":"63","answer":["A","B","D","E"]},{"id":"61","answer":"B"},{"id":"22","answer":"A"},{"id":"37","answer":"A"},{"id":"9","answer":"C"},{"id":"30","answer":["A","B","D"]},{"id":"14","answer":"A"},{"id":"59","answer":"B"},{"id":"13","answer":"D"},{"id":"1","answer":"C"},{"id":"50","answer":"C"},{"id":"20","answer":["A","B","C","D","E"]},{"id":"24","answer":["A","C","D","E"]},{"id":"53","answer":"A"},{"id":"19","answer":"B"},{"id":"31","answer":"A"},{"id":"57","answer":"B"},{"id":"35","answer":"B"},{"id":"55","answer":"A"},{"id":"64","answer":"D"}]', '2018-12-08 05:03:59', 'bedn6863', 10, 6, 'avatar001.jpg'),
+(2, '002', '关羽', '[{"id":"8","answer":"C"},{"id":"21","answer":"A"},{"id":"43","answer":"D"},{"id":"47","answer":"C"},{"id":"40","answer":"B"},{"id":"50","answer":"B"},{"id":"35","answer":"B"},{"id":"63","answer":["A","B","D","E"]},{"id":"34","answer":"D"},{"id":"61","answer":"B"},{"id":"31","answer":"A"},{"id":"55","answer":"A"},{"id":"33","answer":"C"},{"id":"53","answer":"B"},{"id":"28","answer":"B"},{"id":"9","answer":"C"},{"id":"58","answer":"A"},{"id":"26","answer":"B"},{"id":"39","answer":"D"},{"id":"2","answer":"A"}]', '2018-12-08 05:59:57', 'ycpn7611', 9, 0, 'avatar002.jpg'),
+(3, '003', '张飞', '[{"id":"38","answer":"A"},{"id":"3","answer":"B"},{"id":"45","answer":"B"},{"id":"56","answer":"B"},{"id":"36","answer":null},{"id":"49","answer":null},{"id":"51","answer":null},{"id":"35","answer":null},{"id":"40","answer":null},{"id":"8","answer":"C"},{"id":"9","answer":null},{"id":"16","answer":null},{"id":"30","answer":["D","B","A"]},{"id":"32","answer":null},{"id":"46","answer":null},{"id":"42","answer":null},{"id":"22","answer":null},{"id":"27","answer":null},{"id":"63","answer":null},{"id":"34","answer":"D"}]', '2018-12-08 08:08:02', 'cncr4261', 1, 0, 'avatar003.jpg'),
+(4, '004', '赵云', '[{"id":"31","answer":"B"},{"id":"14","answer":"B"},{"id":"49","answer":"C"},{"id":"64","answer":"B"},{"id":"29","answer":"B"},{"id":"22","answer":null},{"id":"34","answer":null},{"id":"40","answer":"C"},{"id":"8","answer":null},{"id":"60","answer":"B"},{"id":"20","answer":["B","A","C","D","E"]},{"id":"50","answer":"C"},{"id":"35","answer":null},{"id":"54","answer":null},{"id":"24","answer":null},{"id":"9","answer":null},{"id":"38","answer":null},{"id":"42","answer":"B"},{"id":"44","answer":"B"},{"id":"1","answer":"B"}]', '2018-12-08 06:26:59', 'fiip9757', 3, 0, 'avatar004.jpg'),
+(5, '005', '马超', '[{"id":"59","answer":"A"},{"id":"52","answer":null},{"id":"47","answer":"A"},{"id":"17","answer":"B"},{"id":"19","answer":"B"},{"id":"18","answer":"B"},{"id":"46","answer":"C"},{"id":"29","answer":"B"},{"id":"40","answer":"C"},{"id":"15","answer":"B"},{"id":"39","answer":"A"},{"id":"33","answer":"C"},{"id":"51","answer":"C"},{"id":"61","answer":"B"},{"id":"64","answer":"C"},{"id":"4","answer":"C"},{"id":"16","answer":"D"},{"id":"36","answer":"B"},{"id":"10","answer":"C"},{"id":"56","answer":"B"}]', '2018-12-08 08:41:38', 'tubr3553', 5, 0, 'avatar005.jpg'),
+(6, '006', '黄忠', '[{"id":"48","answer":"C"},{"id":"33","answer":"C"},{"id":"28","answer":"A"},{"id":"59","answer":"B"},{"id":"14","answer":"A"},{"id":"24","answer":["A","C","D","E"]},{"id":"9","answer":null},{"id":"15","answer":"B"},{"id":"17","answer":null},{"id":"35","answer":null},{"id":"16","answer":null},{"id":"3","answer":null},{"id":"58","answer":"A"},{"id":"12","answer":"C"},{"id":"11","answer":"B"},{"id":"34","answer":"C"},{"id":"60","answer":"B"},{"id":"32","answer":"B"},{"id":"13","answer":"D"},{"id":"51","answer":"B"}]', '2018-12-09 10:48:14', 'rkqk1440', 6, 0, 'avatar006.jpg'),
+(7, '007', '魏延', '', '0000-00-00 00:00:00', 'yscn3579', 0, 0, 'avatar007.jpg'),
+(8, '008', '姜维', '', '0000-00-00 00:00:00', 'gvfs1889', 0, 0, 'avatar008.jpg'),
+(9, '009', '关兴', '', '0000-00-00 00:00:00', 'nryp7397', 0, 0, 'avatar009.jpg'),
+(10, '010', '张苞', '', '0000-00-00 00:00:00', 'afoi8681', 0, 0, 'avatar010.jpg'),
+(11, '011', '吕布', '', '0000-00-00 00:00:00', 'ejwg2035', 0, 0, 'avatar011.jpg'),
+(12, '012', '典韦', '', '0000-00-00 00:00:00', 'wgus4481', 0, 0, 'avatar012.jpg'),
+(13, '013', '许褚', '', '0000-00-00 00:00:00', 'zpft1239', 0, 0, 'avatar013.jpg'),
+(14, '014', '徐晃', '', '0000-00-00 00:00:00', 'ghjw8803', 0, 0, 'avatar014.jpg'),
+(15, '015', '张辽', '', '0000-00-00 00:00:00', 'fzla7224', 0, 0, 'avatar015.jpg'),
+(16, '016', '廖化', '', '0000-00-00 00:00:00', 'afux3750', 0, 0, 'avatar016.jpg'),
+(17, '017', '马岱', '', '0000-00-00 00:00:00', 'fuqe8423', 0, 0, 'avatar017.jpg'),
+(18, '018', '诸葛亮', '', '0000-00-00 00:00:00', 'cblc3774', 0, 0, 'avatar018.jpg'),
+(19, '019', '庞统', '', '0000-00-00 00:00:00', 'xnlo4239', 0, 0, 'avatar019.jpg'),
+(20, '020', '公孙瓒', '', '0000-00-00 00:00:00', 'evje8416', 0, 0, 'avatar020.jpg'),
+(21, '021', '孙坚', '', '0000-00-00 00:00:00', 'txpg2793', 0, 0, 'avatar021.jpg'),
+(22, '022', '孙策', '', '0000-00-00 00:00:00', 'shvp9064', 0, 0, 'avatar022.jpg'),
+(23, '023', '孙权', '', '0000-00-00 00:00:00', 'nkyb9674', 0, 0, 'avatar023.jpg'),
+(24, '024', '夏侯渊', '', '0000-00-00 00:00:00', 'irhw4697', 0, 0, 'avatar024.jpg'),
+(25, '025', '夏侯惇', '', '0000-00-00 00:00:00', 'ufya7692', 0, 0, 'avatar025.jpg'),
+(26, '026', '夏侯霸', '', '0000-00-00 00:00:00', 'wkzn8641', 0, 0, 'avatar026.jpg'),
+(27, '027', '曹嵩', '', '0000-00-00 00:00:00', 'yroh8623', 0, 0, 'avatar027.jpg'),
+(28, '028', '曹丕', '', '0000-00-00 00:00:00', 'xwuu1313', 0, 0, 'avatar028.jpg');
 
 -- --------------------------------------------------------
 
@@ -133,7 +135,7 @@ INSERT INTO `tb_kaosheng` (`id`, `考号`, `姓名`, `题目`, `答案`, `交卷
 --
 
 CREATE TABLE IF NOT EXISTS `tb_shiti` (
-  `id` bigint(4) NOT NULL auto_increment,
+  `id` bigint(4) NOT NULL AUTO_INCREMENT,
   `timu` varchar(500) NOT NULL,
   `biaoda` varchar(5) NOT NULL,
   `fenzhi` int(2) NOT NULL,
@@ -145,8 +147,8 @@ CREATE TABLE IF NOT EXISTS `tb_shiti` (
   `mp3` varchar(500) NOT NULL,
   `mp4` varchar(500) NOT NULL,
   `jpg` varchar(500) NOT NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=69 ;
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=69 ;
 
 --
 -- 转存表中的数据 `tb_shiti`
@@ -203,7 +205,7 @@ INSERT INTO `tb_shiti` (`id`, `timu`, `biaoda`, `fenzhi`, `A`, `B`, `C`, `D`, `E
 (48, '在部分东南亚佛教国家，通常盛行（ ）。', 'C', 1, '接吻礼', '鞠躬礼', '合掌礼', '握手礼', '', '', '', ''),
 (49, '湖北省的简称是（ ）。', 'D', 1, '楚', '荆', '巴', '鄂', '', '', '', ''),
 (50, '五岳归来不看山，（ ）归来不看岳。', 'A', 1, '黄山', '庐山', '华山', '崂山', '', '', '', ''),
-(51, '外国游客如需购买麝香，导游人员应该（ ）。', 'D', 1, '&quot;&quot;&quot;提供必要帮助 &quot;&quot;&quot;', '建议其自行处理', '断然拒绝', '劝阻，并告知中国海关规定', '', '', '', ''),
+(51, '外国游客如需购买麝香，导游人员应该（ ）。', 'D', 1, '提供必要帮助', '建议其自行处理', '断然拒绝', '劝阻，并告知中国海关规定', '', '', '', ''),
 (52, '宋代四大书院之一的白鹿洞书院，位于（ ）。', 'B', 1, '黄山', '庐山', '华山', '崂山', '', '', '', ''),
 (53, '旅游安全管理工作应当贯彻（ ）的方针。', 'A', 1, '安全第一，预防为主', '预防第一，安全为主', '安全第一，安全为主', '安全第一，管理为主', '', '', '', ''),
 (54, '有华中屋脊之称的我国中部最高峰是神农架的神农顶，海拔（ ）', 'C', 1, '3104.4米', '3104.5米', '3105.4米', '3105.5米', '', '', '', ''),
@@ -225,11 +227,11 @@ INSERT INTO `tb_shiti` (`id`, `timu`, `biaoda`, `fenzhi`, `A`, `B`, `C`, `D`, `E
 --
 
 CREATE TABLE IF NOT EXISTS `tb_user` (
-  `id` int(4) NOT NULL auto_increment,
+  `id` int(4) NOT NULL AUTO_INCREMENT,
   `user` varchar(10) NOT NULL,
   `pwd` varchar(10) NOT NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- 转存表中的数据 `tb_user`

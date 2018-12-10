@@ -39,7 +39,8 @@ export default {
     async created(){        //初始化获取数据
         let {data}=await getData();
         let cookie=document.cookie.split(';');
-
+    
+        
         if(cookie[0]){
             data=JSON.parse(data);
             if(data.status){
